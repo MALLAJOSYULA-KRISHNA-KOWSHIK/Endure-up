@@ -5,7 +5,7 @@ import { Dumbbell, Flame, Activity, UserCheck, UsersRound } from "lucide-react";
 const programs = [
   { icon: Dumbbell, title: "Runs", desc: "Our group runs. All levels welcome. Build endurance, make friends." },
   { icon: Flame, title: "Fitness Competitions", desc: "Test your fitness with our in-house competitions. Prizes, glory, and bragging rights." },
-  { icon: Activity, title: "Challanges", desc: "Test your limits with our signature challenge programs." },
+  { icon: Activity, title: "Challenges", desc: "Test your limits with our signature challenge programs." },
 ];
 
 const ProgramsSection = () => {
