@@ -33,7 +33,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <h3 className="font-heading text-sm font-bold text-foreground mb-1">Location</h3>
-                <p className="text-muted-foreground text-sm">Vishakapatnamt<br />Andhra pradesh</p>
+                <p className="text-muted-foreground text-sm">Vishakapatnam , <br />Andhra pradesh</p>
               </div>
             </div>
           </motion.div>
