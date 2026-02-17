@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 72% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 0 72% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 0 72% 45%;
+
+    --radius: 0.25rem;
+
+    --sidebar-background: 0 0% 7%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 0 72% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 0 72% 45%;
+
+    /* Custom tokens */
+    --primary-glow: 0 72% 55%;
+    --surface-elevated: 0 0% 10%;
+    --text-dim: 0 0% 50%;
+    --gradient-hero: linear-gradient(180deg, hsla(0, 0%, 0%, 0.7) 0%, hsla(0, 0%, 0%, 0.4) 50%, hsla(0, 0%, 0%, 0.8) 100%);
+    --gradient-red: linear-gradient(135deg, hsl(0, 72%, 45%), hsl(0, 72%, 30%));
+    --gradient-card: linear-gradient(180deg, hsl(0, 0%, 10%), hsl(0, 0%, 6%));
+    --shadow-red: 0 0 30px hsla(0, 72%, 45%, 0.3);
+    --shadow-red-intense: 0 0 60px hsla(0, 72%, 45%, 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-6 py-20 md:px-12 lg:px-24 lg:py-28;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
+  }
+
+  .section-subtitle {
+    @apply text-muted-foreground text-lg md:text-xl font-light tracking-wide;
+  }
+
+  .red-line {
+    @apply w-16 h-1 bg-primary;
+  }
+
+  .card-elevated {
+    background: var(--gradient-card);
+    @apply border border-border rounded-sm;
+  }
+
+  .text-gradient-red {
+    background: var(--gradient-red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .overlay-dark {
+    background: var(--gradient-hero);
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-red);
+  }
+
+  .btn-primary-endure-up {
+    background: var(--gradient-red);
+    @apply text-primary-foreground font-heading font-bold uppercase tracking-widest px-8 py-4 text-sm transition-all duration-300 border-0;
+  }
+  .btn-primary-endure-up:hover {
+    box-shadow: var(--shadow-red-intense);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline-endure-up {
+    @apply border-2 border-primary text-primary font-heading font-bold uppercase tracking-widest px-8 py-4 text-sm transition-all duration-300 bg-transparent;
+  }
+  .btn-outline-endure-up:hover {
+    @apply bg-primary text-primary-foreground;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(0, 0%, 5%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(0, 72%, 45%);
+  border-radius: 3px;
+}
